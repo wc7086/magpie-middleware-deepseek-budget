@@ -1,0 +1,29 @@
+{
+  "name": "magpie-middleware-deepseek-budget",
+  "version": "0.1.0",
+  "description": "magpie 网关中间件：请求发往 DeepSeek 模型时，把「估算输入 token + max_tokens」压在 1,048,576 的上下文窗口内",
+  "type": "module",
+  "files": [
+    "deepseek-budget.middleware.js",
+    "README.md"
+  ],
+  "keywords": [
+    "magpie",
+    "magpie-middleware",
+    "magpie-plugin",
+    "deepseek",
+    "context-window",
+    "max-tokens",
+    "llm-gateway"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "magpie": {
+    "middleware": "./deepseek-budget.middleware.js",
+    "options": {
+      "safetyFactor": 1.2,
+      "minOutputTokens": 1
+    }
+  }
+}
